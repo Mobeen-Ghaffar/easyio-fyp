@@ -1,0 +1,119 @@
+
+      <div class="loader_bg">
+         <div class="loader"><img src="<%= asset_url('loading.gif')%>" alt="#" /></div>
+      </div>
+      <!-- end loader --> 
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="head_top">
+               <div class="container">
+                  <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                       <div class="top-box">
+                        <ul class="sociel_link">
+                         <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
+                     </ul>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                       <div class="top-box">
+                        <p>long established fact that a reader will be </p>
+                    </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                  <div class="full">
+                     <div class="center-desk">
+                        <div class="logo"> <a href="index.html"><img src="<%= asset_url('logo.png')%>" alt="logo"/></a> </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9">
+                  <div class="menu-area">
+                     <div class="limit-box">
+                        <nav class="main-menu">
+                           <ul class="menu-area-main">
+                              <li class="mean-last"> <a href="#signup">signup</a> </li>
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+                  <li><a class="buy" href="<%= user_login_url %>">Login</a></li>
+               </div>
+            </div>
+         </div>
+         <!-- end header inner --> 
+      </header>
+      <!-- end header -->
+      <div class="brand_color">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Login</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- contact -->
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+
+                    
+                      <%= form_for :user ,url: user_signin_url ,:html => {class: "main_form user_login"} do |f|%>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <%= f.text_field :email,:class=>"form-control", :placeholder=>"Email", :type=>"text" %>
+                            </div>
+                            <div class=" col-md-12">
+                                <%= f.password_field :password,:class=>"form-control", :placeholder=>"Password", :type=>"password" %>
+                            </div>
+                            <div class=" col-md-12">
+                                <button class="send" >Login</button>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end contact -->
+      <!--  footer --> 
+      <footr>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-6 offset-md-3">
+                     <ul class="sociel">
+                         <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                     </ul>
+                  </div>
+            </div> 
+         </div>
+            <div class="copyright">
+              
+            </div>
+         
+      </div>
+      </footr>
+   
+ 

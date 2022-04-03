@@ -1,0 +1,291 @@
+
+   <!-- body -->
+   <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src=" <%= asset_url('loading.gif')%>" alt="#" /></div>
+      </div>
+      <!-- end loader --> 
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="head_top">
+               <div class="container">
+                  <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                       <div class="top-box">
+                        <ul class="sociel_link">
+                         <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
+                     </ul>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                       <div class="top-box">
+                        <p>long established fact that a reader will be </p>
+                    </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                  <div class="full">
+                     <div class="center-desk">
+                        <div class="logo"> <a href="index.html"><img src="<%= asset_url('logo.png')%>" alt="logo"/></a> </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9">
+                  <div class="menu-area">
+                     <div class="limit-box">
+                        <nav class="main-menu">
+                           <ul class="menu-area-main">
+                           <li> 
+                              <div class="dropdown">
+                               <button class="dropbtn">Product</button>
+                               <div class="dropdown-content">
+                                 <a href="<%= product_add_url %>">Add Product</a>
+                                 <a href="<%= product_edit_url %>">Edit Product</a>
+                                 <a href="<%= product_view_url %>">View Product</a>
+                                 <a href="<%= product_location_url %>">Add Location</a>
+
+                              </div>
+                              </div>
+                           </li>
+                           <li> 
+                              <div class="dropdown">
+                               <button class="dropbtn">Customer</button>
+                               <div class="dropdown-content">
+                                 <a href="<%= customer_add_url %>">Add Customer</a> 
+                                 <a href="<%= customer_view_url %>">View Customer</a>
+                              </div>
+                              </div>
+                           </li>
+
+                              <li> <a href="<%= payment_view_url %>">Transactions</a> </li>
+                              <li> <div class="dropdown">
+                               <button class="dropbtn">Discount</button>
+                               <div class="dropdown-content">
+                                 <a href="<%= product_adddiscount_url %>">Add Discount</a> 
+                                 <a href="<%= product_removediscount_url %>">Remove Discount</a>
+                              </div>
+                              </div>
+                           </li>
+                              <li> <a href="<%= product_location_predicator_url %>">Store</a> </li>
+                              
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+                  <li><a class="buy" href="<%= user_login_url %>">Logout</a></li>
+               </div>
+            </div>
+         </div>
+         <!-- end header inner --> 
+      </header>
+      <!-- end header -->
+      <section class="slider_section">
+         <div id="main_slider" class="carousel slide banner-main" data-ride="carousel">
+
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <img class="first-slide" src="<%= asset_url('banner2.jpg')%>" alt="First slide">
+                  <div class="container">
+                     <div class="carousel-caption relative">
+                        <h1>Our <br> <strong class="black_bold">Latest </strong><br>
+                           <strong class="yellow_bold">Product </strong></h1>
+                        <p>It is a long established fact that a r <br>
+                          eader will be distracted by the readable content of a page </p>
+                        <a  href="#">see more Products</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <img class="second-slide" src="<%= asset_url('banner2.jpg')%>" alt="Second slide">
+                  <div class="container">
+                     <div class="carousel-caption relative">
+                        <h1>Our <br> <strong class="black_bold">Latest </strong><br>
+                           <strong class="yellow_bold">Product </strong></h1>
+                        <p>It is a long established fact that a r <br>
+                          eader will be distracted by the readable content of a page </p>
+                        <a  href="#">see more Products</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <img class="third-slide" src="<%= asset_url('banner2.jpg')%>" alt="Third slide">
+                  <div class="container">
+                     <div class="carousel-caption relative">
+                        <h1>Our <br> <strong class="black_bold">Latest </strong><br>
+                           <strong class="yellow_bold">Product </strong></h1>
+                        <p>It is a long established fact that a r <br>
+                          eader will be distracted by the readable content of a page </p>
+                        <a  href="#">see more Products</a>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
+            <i class='fa fa-angle-right'></i>
+            </a>
+            <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
+            <i class='fa fa-angle-left'></i>
+            </a>
+            
+         </div>
+
+      </section>
+
+
+
+
+
+
+<!-- CHOOSE  -->
+     
+      <!-- end service -->
+
+      <!-- our product -->
+      <div class="product">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="title">
+                     <h2>our <strong class="black">products</strong></h2>
+                     <span>We package the products with best services to make you a happy customer.</span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="product-bg">
+         <div class="product-bg-white">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="product-box">
+                     <i><img src="<%= asset_url('p1.png')%>"/></i>
+                     <h3>Norton Internet Security</h3>
+                     <span>$25.00</span>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="product-box">
+                     <i><img src="<%= asset_url('p2.png')%>"/></i>
+                     <h3>Norton Internet Security</h3>
+                     <span>$25.00</span>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="product-box">
+                     <i><img src="<%= asset_url('p3.png')%>"/></i>
+                     <h3>Norton Internet Security</h3>
+                     <span>$25.00</span>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="product-box">
+                     <i><img src="<%= asset_url('p4.png')%>"/></i>
+                     <h3>Norton Internet Security</h3>
+                     <span>$25.00</span>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="product-box">
+                     <i><img src="<%= asset_url('p5.png')%>"/></i>
+                     <h3>Norton Internet Security</h3>
+                     <span>$25.00</span>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="product-box">
+                     <i><img src="<%= asset_url('p2.png')%>"/></i>
+                     <h3>Norton Internet Security</h3>
+                     <span>$25.00</span>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="product-box">
+                     <i><img src="<%= asset_url('p6.png')%>"/></i>
+                     <h3>Norton Internet Security</h3>
+                     <span>$25.00</span>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="product-box">
+                     <i><img src="<%= asset_url('p7.png')%>"/></i>
+                     <h3>Norton Internet Security</h3>
+                     <span>$25.00</span>
+                  </div>
+               </div>
+              
+              
+              
+               
+               </div>
+            </div>
+         </div>
+
+
+
+    
+
+         <div class="container">
+            <div class="yellow_bg">
+            <div class="row">
+               <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                  <div class="yellow-box">
+                     <h3>REQUEST A FREE QUOTE<i><img src=" <%= asset_url('calll.png')%>"/></i></h3>
+                     
+                     <p>Get answers and advice from people you want it from.</p>
+                  </div>
+               </div>
+                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                  <div class="yellow-box">
+                     <a href="#">Get  Quote</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         </div>
+      </div>
+
+      <!-- end our product -->
+      <!-- map -->
+     
+      <!-- end map --> 
+      <!--  footer --> 
+
+
+
+
+      <footr>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-6 offset-md-3">
+                     <ul class="sociel">
+                         <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                     </ul>
+                  </div>
+            </div> 
+         </div>
+            <div class="copyright">
+              
+            </div>
+         
+      </div>
+      </footr>
+      <!-- end footer -->
+      <!-- Javascript files--> 

@@ -1,0 +1,234 @@
+
+   <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="<%= asset_url('loading.gif')%>" alt="#" /></div>
+      </div>
+      <!-- end loader --> 
+      <!-- header -->
+          <header>
+         <!-- header inner -->
+         <div class="header">
+            <div class="head_top">
+               <div class="container">
+                  <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                       <div class="top-box">
+                        <ul class="sociel_link">
+                         <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-linkedin"></i></a></li>
+                     </ul>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                       <div class="top-box">
+                        <p>long established fact that a reader will be </p>
+                    </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+        
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                  <div class="full">
+                     <div class="center-desk">
+                        <div class="logo"> <a href="index.html"><img src="<%= asset_url('logo.png')%>" alt="logo"/></a> </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-7 col-lg-7 col-md-9 col-sm-9">
+                  <div class="menu-area">
+                     <div class="limit-box">
+                        <nav class="main-menu">
+                           <ul class="menu-area-main">
+                           <li> 
+                              <div class="dropdown">
+                               <button class="dropbtn">Product</button>
+                               <div class="dropdown-content">
+                                 <a href="<%= product_add_url %>">Add Product</a>
+                                 <a href="<%= product_edit_url %>">Edit Product</a>
+                                 <a href="<%= product_view_url %>">View Product</a>
+                                 <a href="<%= product_location_url %>">Add Location</a>
+
+                              </div>
+                              </div>
+                           </li>
+                           <li> 
+                              <div class="dropdown">
+                               <button class="dropbtn">Customer</button>
+                               <div class="dropdown-content">
+                                 <a href="<%= customer_add_url %>">Add Customer</a> 
+                                 <a href="<%= customer_view_url %>">View Customer</a>
+                              </div>
+                              </div>
+                           </li>
+
+                              <li> <a href="<%= payment_view_url %>">Transactions</a> </li>
+                              <li> <div class="dropdown">
+                               <button class="dropbtn">Discount</button>
+                               <div class="dropdown-content">
+                                 <a href="<%= product_adddiscount_url %>">Add Discount</a> 
+                                 <a href="<%= product_removediscount_url %>">Remove Discount</a>
+                              </div>
+                              </div>
+                           </li>
+                              <li> <a href="">Store</a> </li>
+                              
+                           </ul>
+                        </nav>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2">
+                  <li><a class="buy" href="<%= user_login_url %>">Logout</a></li>
+               </div>
+            </div>
+         </div>
+         <!-- end header inner --> 
+      </header>
+      <!-- end header -->
+      <div class="brand_color">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Transactions</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <!-- contact -->
+  
+   
+  <div class="limiter">
+  <div class="container-table100">
+  <div class="wrap-table100" style="margin-left:-100px">
+  <div class="table100 ver1 m-b-110">
+          
+
+          <div class="table100-body js-pscroll">
+            <table>
+               <thead>
+                <tr class="row100 head">
+                  <th class="cell100 column1">Customer Name</th>
+                  <th class="cell100 column2">Date</th>
+                  <th class="cell100 column3">Time</th>
+                  <th class="cell100 column4">Type</th>
+                  <th class="cell100 column5">Total Price</th>
+                  <th class="cell100 column6">Payment Credentials</th>
+                  <th  rowspan="2" scope="rowgroup" class="cell100 column7">Items Sold</th>
+                </tr>
+              </thead>
+              <tbody>
+              
+              <% @transactions.each do |t| %>
+              
+              <tr class="row100 body">
+                  <%name=""%>
+                  <% cu = customer(t.data[:customerId])%>
+                  <%if !cu.blank? %>
+                  <% cu.first(1).each do |c| %>
+                  <%name=c.data[:displayName]%>
+                  <% puts c %>
+                  <%end%>
+                  <%end%>
+                  <td class="cell100 column1"><%= t.data[:customerId]%></td>
+                  <td  class="cell100 column2"><%= t.data[:date]%></td>
+                  <td   class="cell100 column3"><%= t.data[:time]%></td>
+                  <td  class="cell100 column4"><%= t.data[:type]%></td>
+                  <td class="cell100 column5"><%= t.data[:total]%></td>
+                  <td  class="cell100 column6"> </td>
+                  <td  class="cell100 column7">
+                      <% sale = salelist(t.document_id)%>
+                      
+                      <% sale.each do |s|%>
+                        <%if s %>
+                        <% puts s.data%>
+                        <% p = product(s.data[:itemId])%>
+                         <p ><%= p.data[:name]%>     <%= s.data[:quantity]%></p>  
+                     <%end%>
+                     <%end%>
+                   </td>
+
+
+              </tr>
+              
+              <%end%>
+              
+              </tbody>
+            </table>
+          </div>
+        </div>
+        </div>
+    </div>
+  </div>
+
+
+
+    <!-- end contact -->
+      <!--  footer --> 
+      <footr>
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-6 offset-md-3">
+                     <ul class="sociel">
+                         <li> <a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-twitter"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                         <li> <a href="#"><i class="fa fa-instagram"></i></a></li>
+                     </ul>
+                  </div>
+            </div>
+            <div class="row">
+               <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="contact">
+                     <h3>conatct us</h3>
+                     <span>123 Second Street Fifth Avenue,<br>
+                       Manhattan, New York
+                        +987 654 3210</span>
+                  </div>
+               </div>
+                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="contact">
+                     <h3>ADDITIONAL LINKS</h3>
+                     <ul class="lik">
+                         <li> <a href="#">About us</a></li>
+                         <li> <a href="#">Terms and conditions</a></li>
+                         <li> <a href="#">Privacy policy</a></li>
+                         <li> <a href="#">News</a></li>
+                          <li> <a href="#">Contact us</a></li>
+                     </ul>
+                  </div>
+               </div>
+                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="contact">
+                     <h3>service</h3>
+                      <ul class="lik">
+                    <li> <a href="#"> Data recovery</a></li>
+                         <li> <a href="#">Computer repair</a></li>
+                         <li> <a href="#">Mobile service</a></li>
+                         <li> <a href="#">Network solutions</a></li>
+                          <li> <a href="#">Technical support</a></li>
+                  </div>
+               </div>
+                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                  <div class="contact">
+                     <h3>IT NEXT THEME</h3>
+                     <span>Tincidunt elit magnis <br>
+                     nulla facilisis. Dolor <br>
+                  sagittis maecenas. <br>
+               Sapien nunc amet <br>
+            ultrices, </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+         
+      </div>
+      </footr>
